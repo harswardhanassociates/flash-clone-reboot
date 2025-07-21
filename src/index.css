@@ -8,35 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Flash Converter Dark Theme */
+    --background: 210 15% 6%;
+    --foreground: 35 100% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 15% 8%;
+    --card-foreground: 35 100% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 15% 8%;
+    --popover-foreground: 35 100% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 30 100% 55%;
+    --primary-foreground: 210 15% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 15% 12%;
+    --secondary-foreground: 35 100% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 15% 12%;
+    --muted-foreground: 35 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 30 100% 55%;
+    --accent-foreground: 210 15% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 100% 55%;
+    --input: 210 15% 12%;
+    --ring: 30 100% 55%;
 
-    --radius: 0.5rem;
+    /* Custom Flash theme variables */
+    --flash-orange: 30 100% 55%;
+    --flash-orange-glow: 30 100% 65%;
+    --flash-dark: 210 15% 6%;
+    --flash-card: 210 15% 8%;
+    --flash-border: 30 100% 55%;
+    
+    /* Gradients */
+    --gradient-radial: radial-gradient(circle at center, hsl(var(--flash-orange) / 0.3) 0%, transparent 70%);
+    --gradient-glow: linear-gradient(135deg, hsl(var(--flash-orange) / 0.8), hsl(var(--flash-orange-glow) / 0.6));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(var(--flash-orange) / 0.3);
+    --shadow-card: 0 4px 20px hsl(var(--flash-dark) / 0.8);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +72,34 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Same as light theme for this project */
+    --background: 210 15% 6%;
+    --foreground: 35 100% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 15% 8%;
+    --card-foreground: 35 100% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 15% 8%;
+    --popover-foreground: 35 100% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 30 100% 55%;
+    --primary-foreground: 210 15% 6%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 15% 12%;
+    --secondary-foreground: 35 100% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 15% 12%;
+    --muted-foreground: 35 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 30 100% 55%;
+    --accent-foreground: 210 15% 6%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 30 100% 55%;
+    --input: 210 15% 12%;
+    --ring: 30 100% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +118,32 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: radial-gradient(circle at 20% 80%, hsl(var(--flash-orange) / 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, hsl(var(--flash-orange) / 0.15) 0%, transparent 50%),
+                hsl(var(--background));
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .flash-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .flash-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border) / 0.3);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .flash-button-primary {
+    background: var(--gradient-glow);
+    box-shadow: var(--shadow-glow);
+    transition: all 0.3s ease;
+  }
+  
+  .flash-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px hsl(var(--flash-orange) / 0.5);
   }
 }
