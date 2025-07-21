@@ -8,50 +8,69 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Flash Converter Dark Theme */
-    --background: 323 21% 16%;
+    /* Glassmorphism Neon Theme */
+    --background: 230 35% 7%;
     --foreground: 317 100% 54%;
 
-    --card: 323 21% 18%;
+    --card: 320 25% 8%;
     --card-foreground: 317 100% 54%;
 
-    --popover: 323 21% 18%;
+    --popover: 320 25% 8%;
     --popover-foreground: 317 100% 54%;
 
     --primary: 317 100% 54%;
-    --primary-foreground: 323 21% 16%;
+    --primary-foreground: 230 35% 7%;
 
-    --secondary: 323 21% 20%;
-    --secondary-foreground: 317 100% 54%;
+    --secondary: 265 100% 50%;
+    --secondary-foreground: 230 35% 7%;
 
-    --muted: 323 21% 20%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 230 35% 7%;
+
+    --muted: 320 25% 12%;
     --muted-foreground: 317 60% 70%;
 
-    --accent: 317 100% 54%;
-    --accent-foreground: 323 21% 16%;
-
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 317 100% 54%;
-    --input: 323 21% 20%;
+    --input: 320 25% 8%;
     --ring: 317 100% 54%;
 
-    /* Custom Flash theme variables - Neon Pink */
-    --flash-orange: 317 100% 54%;
-    --flash-orange-glow: 317 100% 64%;
-    --flash-dark: 323 21% 16%;
-    --flash-card: 323 21% 18%;
-    --flash-border: 317 100% 54%;
+    /* Enhanced Neon Color Palette */
+    --neon-pink: 317 100% 54%;
+    --neon-purple: 265 100% 50%;
+    --neon-cyan: 195 100% 50%;
+    --neon-blue: 210 100% 50%;
+    --neon-green: 120 100% 50%;
     
-    /* Gradients */
-    --gradient-radial: radial-gradient(circle at center, hsl(var(--flash-orange) / 0.4) 0%, transparent 70%);
-    --gradient-glow: linear-gradient(135deg, hsl(var(--flash-orange) / 0.9), hsl(var(--flash-orange-glow) / 0.7));
+    /* Glass Background */
+    --glass-bg: 320 25% 8%;
+    --glass-border: 317 100% 54%;
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     
-    /* Enhanced Neon Shadows */
-    --shadow-glow: 0 0 0.5em hsl(var(--flash-orange)), 0 0 2em 0.5em hsl(var(--flash-orange) / 0.4);
-    --shadow-intense: inset 0 0 0.5em 0 hsl(var(--flash-orange)), 0 0 0.5em 0 hsl(var(--flash-orange));
-    --shadow-card: 0 4px 20px hsl(var(--flash-dark) / 0.8), 0 0 1em hsl(var(--flash-orange) / 0.1);
+    /* Enhanced Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--neon-purple)), hsl(var(--neon-cyan)));
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    --gradient-radial: radial-gradient(circle at 20% 80%, hsl(var(--neon-pink) / 0.3) 0%, transparent 50%),
+                       radial-gradient(circle at 80% 20%, hsl(var(--neon-cyan) / 0.3) 0%, transparent 50%),
+                       radial-gradient(circle at 40% 40%, hsl(var(--neon-purple) / 0.2) 0%, transparent 50%);
+    
+    /* Advanced Glass Effects */
+    --glass-blur: blur(10px);
+    --glass-backdrop: rgba(255, 255, 255, 0.1);
+    --glass-border-gradient: linear-gradient(135deg, hsl(var(--neon-pink) / 0.8), hsl(var(--neon-cyan) / 0.6));
+    
+    /* Enhanced Shadows */
+    --shadow-neon: 0 0 5px hsl(var(--neon-pink)), 
+                   0 0 10px hsl(var(--neon-pink)), 
+                   0 0 15px hsl(var(--neon-pink)), 
+                   0 0 20px hsl(var(--neon-pink));
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37),
+                    0 0 0 1px rgba(255, 255, 255, 0.05);
+    --shadow-intense: inset 0 0 0.5em 0 hsl(var(--neon-pink)), 
+                      0 0 0.5em 0 hsl(var(--neon-pink)),
+                      0 0 2em 0.5em hsl(var(--neon-pink) / 0.4);
 
     --radius: 0.75rem;
 
@@ -119,38 +138,66 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    background: radial-gradient(circle at 20% 80%, hsl(var(--flash-orange) / 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, hsl(var(--flash-orange) / 0.15) 0%, transparent 50%),
-                hsl(var(--background));
+    font-family: 'Orbitron', sans-serif;
+    background: var(--gradient-radial), hsl(var(--background));
     min-height: 100vh;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 25% 25%, hsl(var(--neon-pink) / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--neon-cyan) / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(var(--neon-purple) / 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
   }
 }
 
 @layer components {
-  .flash-glow {
-    box-shadow: var(--shadow-glow);
-  }
-  
+  /* Glass Card Effects */
   .flash-card {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--border));
-    box-shadow: var(--shadow-card);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-glass);
+    position: relative;
+    overflow: hidden;
   }
   
+  .flash-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--glass-border-gradient);
+    opacity: 0.8;
+  }
+  
+  /* Enhanced Neon Button */
   .flash-button-primary {
-    background: var(--gradient-glow);
+    background: var(--gradient-neon);
     box-shadow: var(--shadow-intense);
-    border: hsl(var(--flash-border)) 0.125em solid;
+    border: hsl(var(--neon-pink)) 0.125em solid;
     text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
     position: relative;
-    transition: all 100ms linear;
+    transition: all 200ms ease;
+    overflow: hidden;
   }
   
   .flash-button-primary::before {
     pointer-events: none;
     content: "";
     position: absolute;
-    background: hsl(var(--flash-orange));
+    background: hsl(var(--neon-pink));
     top: 120%;
     left: 0;
     width: 100%;
@@ -158,6 +205,7 @@ All colors MUST be HSL.
     transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
     filter: blur(1em);
     opacity: 0.7;
+    transition: opacity 200ms ease;
   }
 
   .flash-button-primary::after {
@@ -167,17 +215,18 @@ All colors MUST be HSL.
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow: 0 0 2em 0.5em hsl(var(--flash-orange));
+    box-shadow: 0 0 2em 0.5em hsl(var(--neon-pink));
     opacity: 0;
-    background-color: hsl(var(--flash-orange));
+    background: var(--gradient-neon);
     z-index: -1;
-    transition: opacity 100ms linear;
+    transition: opacity 200ms ease;
   }
   
   .flash-button-primary:hover,
   .flash-button-primary:focus {
-    color: hsl(var(--flash-dark));
+    color: hsl(var(--background));
     text-shadow: none;
+    transform: translateY(-2px);
   }
 
   .flash-button-primary:hover::before,
@@ -188,5 +237,51 @@ All colors MUST be HSL.
   .flash-button-primary:hover::after,
   .flash-button-primary:focus::after {
     opacity: 1;
+  }
+  
+  /* Glass Input Fields */
+  .glass-input {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 200ms ease;
+  }
+  
+  .glass-input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: hsl(var(--neon-pink) / 0.5);
+    box-shadow: 0 0 0 2px hsl(var(--neon-pink) / 0.2);
+  }
+  
+  /* Animated Gradients */
+  .gradient-text {
+    background: var(--gradient-neon);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Floating Animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Glass Badge */
+  .glass-badge {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }

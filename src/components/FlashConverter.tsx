@@ -35,7 +35,7 @@ const FlashConverter = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-flash-orange-glow bg-clip-text text-transparent">
+          <h1 className="text-6xl font-bold mb-6 gradient-text float-animation">
             WELCOME TO FLASH CONVERTER
           </h1>
           
@@ -91,7 +91,7 @@ const FlashConverter = () => {
                         placeholder="Only Trust Wallet addresses are supported"
                         value={walletAddress}
                         onChange={(e) => setWalletAddress(e.target.value)}
-                        className="bg-input border-flash-border"
+                        className="glass-input"
                       />
                       {walletAddress && !isWalletVerified && (
                         <Button 
@@ -119,7 +119,7 @@ const FlashConverter = () => {
                         placeholder="Minimum of 20 USDT required"
                         value={usdtAmount}
                         onChange={(e) => setUsdtAmount(e.target.value)}
-                        className="bg-input border-flash-border"
+                        className="glass-input"
                         min="20"
                       />
                     </div>
@@ -162,7 +162,7 @@ const FlashConverter = () => {
                         <span>USDT</span>
                         <span>FLASH</span>
                       </div>
-                      <Badge variant="secondary" className="bg-primary text-primary-foreground">
+                      <Badge variant="secondary" className="glass-badge">
                         45 Days Validity • Best Value
                       </Badge>
                       <div className="mt-4 p-2 bg-muted rounded">
@@ -188,7 +188,7 @@ const FlashConverter = () => {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-sm">Network Status:</span>
-                        <Badge variant="secondary" className="bg-green-500/20 text-green-400 border-green-500/30">
+                        <Badge variant="secondary" className="glass-badge bg-neon-green/20 text-neon-green border-neon-green/30">
                           Active
                         </Badge>
                       </div>
