@@ -9,48 +9,49 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Flash Converter Dark Theme */
-    --background: 210 15% 6%;
-    --foreground: 35 100% 95%;
+    --background: 323 21% 16%;
+    --foreground: 317 100% 54%;
 
-    --card: 210 15% 8%;
-    --card-foreground: 35 100% 95%;
+    --card: 323 21% 18%;
+    --card-foreground: 317 100% 54%;
 
-    --popover: 210 15% 8%;
-    --popover-foreground: 35 100% 95%;
+    --popover: 323 21% 18%;
+    --popover-foreground: 317 100% 54%;
 
-    --primary: 330 100% 60%;
-    --primary-foreground: 210 15% 6%;
+    --primary: 317 100% 54%;
+    --primary-foreground: 323 21% 16%;
 
-    --secondary: 210 15% 12%;
-    --secondary-foreground: 35 100% 95%;
+    --secondary: 323 21% 20%;
+    --secondary-foreground: 317 100% 54%;
 
-    --muted: 210 15% 12%;
-    --muted-foreground: 35 20% 65%;
+    --muted: 323 21% 20%;
+    --muted-foreground: 317 60% 70%;
 
-    --accent: 330 100% 60%;
-    --accent-foreground: 210 15% 6%;
+    --accent: 317 100% 54%;
+    --accent-foreground: 323 21% 16%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 330 100% 60%;
-    --input: 210 15% 12%;
-    --ring: 330 100% 60%;
+    --border: 317 100% 54%;
+    --input: 323 21% 20%;
+    --ring: 317 100% 54%;
 
-    /* Custom Flash theme variables - Pink Neon */
-    --flash-orange: 330 100% 60%;
-    --flash-orange-glow: 320 100% 70%;
-    --flash-dark: 210 15% 6%;
-    --flash-card: 210 15% 8%;
-    --flash-border: 330 100% 60%;
+    /* Custom Flash theme variables - Neon Pink */
+    --flash-orange: 317 100% 54%;
+    --flash-orange-glow: 317 100% 64%;
+    --flash-dark: 323 21% 16%;
+    --flash-card: 323 21% 18%;
+    --flash-border: 317 100% 54%;
     
     /* Gradients */
-    --gradient-radial: radial-gradient(circle at center, hsl(var(--flash-orange) / 0.3) 0%, transparent 70%);
-    --gradient-glow: linear-gradient(135deg, hsl(var(--flash-orange) / 0.8), hsl(var(--flash-orange-glow) / 0.6));
+    --gradient-radial: radial-gradient(circle at center, hsl(var(--flash-orange) / 0.4) 0%, transparent 70%);
+    --gradient-glow: linear-gradient(135deg, hsl(var(--flash-orange) / 0.9), hsl(var(--flash-orange-glow) / 0.7));
     
-    /* Shadows */
-    --shadow-glow: 0 0 30px hsl(var(--flash-orange) / 0.3);
-    --shadow-card: 0 4px 20px hsl(var(--flash-dark) / 0.8);
+    /* Enhanced Neon Shadows */
+    --shadow-glow: 0 0 0.5em hsl(var(--flash-orange)), 0 0 2em 0.5em hsl(var(--flash-orange) / 0.4);
+    --shadow-intense: inset 0 0 0.5em 0 hsl(var(--flash-orange)), 0 0 0.5em 0 hsl(var(--flash-orange));
+    --shadow-card: 0 4px 20px hsl(var(--flash-dark) / 0.8), 0 0 1em hsl(var(--flash-orange) / 0.1);
 
     --radius: 0.75rem;
 
@@ -73,33 +74,33 @@ All colors MUST be HSL.
 
   .dark {
     /* Same as light theme for this project */
-    --background: 210 15% 6%;
-    --foreground: 35 100% 95%;
+    --background: 323 21% 16%;
+    --foreground: 317 100% 54%;
 
-    --card: 210 15% 8%;
-    --card-foreground: 35 100% 95%;
+    --card: 323 21% 18%;
+    --card-foreground: 317 100% 54%;
 
-    --popover: 210 15% 8%;
-    --popover-foreground: 35 100% 95%;
+    --popover: 323 21% 18%;
+    --popover-foreground: 317 100% 54%;
 
-    --primary: 330 100% 60%;
-    --primary-foreground: 210 15% 6%;
+    --primary: 317 100% 54%;
+    --primary-foreground: 323 21% 16%;
 
-    --secondary: 210 15% 12%;
-    --secondary-foreground: 35 100% 95%;
+    --secondary: 323 21% 20%;
+    --secondary-foreground: 317 100% 54%;
 
-    --muted: 210 15% 12%;
-    --muted-foreground: 35 20% 65%;
+    --muted: 323 21% 20%;
+    --muted-foreground: 317 60% 70%;
 
-    --accent: 330 100% 60%;
-    --accent-foreground: 210 15% 6%;
+    --accent: 317 100% 54%;
+    --accent-foreground: 323 21% 16%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 330 100% 60%;
-    --input: 210 15% 12%;
-    --ring: 330 100% 60%;
+    --border: 317 100% 54%;
+    --input: 323 21% 20%;
+    --ring: 317 100% 54%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -132,18 +133,60 @@ All colors MUST be HSL.
   
   .flash-card {
     background: hsl(var(--card));
-    border: 1px solid hsl(var(--border) / 0.3);
+    border: 1px solid hsl(var(--border));
     box-shadow: var(--shadow-card);
   }
   
   .flash-button-primary {
     background: var(--gradient-glow);
-    box-shadow: var(--shadow-glow);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-intense);
+    border: hsl(var(--flash-border)) 0.125em solid;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    position: relative;
+    transition: all 100ms linear;
   }
   
-  .flash-button-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 40px hsl(var(--flash-orange) / 0.5);
+  .flash-button-primary::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: hsl(var(--flash-orange));
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  }
+
+  .flash-button-primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em hsl(var(--flash-orange));
+    opacity: 0;
+    background-color: hsl(var(--flash-orange));
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+  
+  .flash-button-primary:hover,
+  .flash-button-primary:focus {
+    color: hsl(var(--flash-dark));
+    text-shadow: none;
+  }
+
+  .flash-button-primary:hover::before,
+  .flash-button-primary:focus::before {
+    opacity: 1;
+  }
+
+  .flash-button-primary:hover::after,
+  .flash-button-primary:focus::after {
+    opacity: 1;
   }
 }
