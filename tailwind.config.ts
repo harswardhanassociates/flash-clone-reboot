@@ -52,9 +52,9 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Flash theme colors
-				'flash-orange': 'hsl(var(--flash-orange))',
-				'flash-orange-glow': 'hsl(var(--flash-orange-glow))',
+				// Flash theme colors - Pink Neon
+				'flash-pink': 'hsl(var(--flash-orange))',
+				'flash-pink-glow': 'hsl(var(--flash-orange-glow))',
 				'flash-dark': 'hsl(var(--flash-dark))',
 				'flash-card': 'hsl(var(--flash-card))',
 				'flash-border': 'hsl(var(--flash-border))',
